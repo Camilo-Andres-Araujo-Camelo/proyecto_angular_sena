@@ -1,0 +1,65 @@
+<div class="card mt-5">
+  <div class="card-header">
+    <h5 class="card-title text-center mt-2">Viajar es seguro con nosotros</h5>
+  </div>
+
+  <div class="card-body">
+    <form class="d-flex flex-column">
+      <label for="origen" class="form-label">Ciudad de origen</label>
+      <select
+        class="form-select"
+        id="origen"
+        aria-label="Origen viaje"
+        name="origen"
+        [(ngModel)]="origen"
+        (ngModelChange)="setOrigen(origen)"
+      >
+        @for (ciudad of ciudades; track ciudad.id) {
+        <option [ngValue]="ciudad">{{ ciudad.nombre }}</option>
+        }
+      </select>
+
+      <label for="destino" class="form-label">Ciudad de destino</label>
+      <select
+        class="form-select"
+        id="destino"
+        aria-label="destino viaje"
+        name="destino"
+        [(ngModel)]="destino"
+        (ngModelChange)="setDestino(destino)"
+      >
+        @for (ciudad of ciudades; track ciudad.id) {
+        <option [ngValue]="ciudad">{{ ciudad.nombre }}</option>
+        }
+      </select>
+
+      <label for="fecha_salida" class="form-label">Fecha salida</label>
+      <input
+        name="salida"
+        id="fecha_salida"
+        type="date"
+        class="form-control mb-2"
+      />
+
+      <label for="fecha_regreso" class="form-label"
+        >Fecha regreso (Opcional)</label
+      >
+      <input
+        name="regreso"
+        id="fecha_regreso"
+        type="date"
+        class="form-control mb-3"
+      />
+
+      <div class="d-flex justify-content-center">
+        <button
+          class="btn btn-primary btn-lg w-75 my-2"
+          type="submit"
+          (click)="comprarNext()"
+        >
+          Comprar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

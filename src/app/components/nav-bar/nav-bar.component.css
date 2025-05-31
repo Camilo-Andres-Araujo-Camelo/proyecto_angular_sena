@@ -1,0 +1,22 @@
+.navbar {
+  padding: 2rem;
+}
+.navbar-collapse {
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar-brand {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: 2rem;
+}
+/** Responsivo */
+@media screen and (max-width: 767px) {
+  .navbar-brand {
+    display: none;
+  }
+}
+
+li a:hover {
+  text-decoration: underline;
+}

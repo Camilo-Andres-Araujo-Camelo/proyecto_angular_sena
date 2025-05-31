@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row d-flex justify-content-end align-items-center">
+    <div class="col-md-6 col-lg-7 me-2 leyenda text-white">
+      <h4>Bienvenido a la mejor empresa de transporte de Colombia</h4>
+      <span>Cuando trabajamos en equipo todo es mejor!</span>
+    </div>
+
+    <div class="col-md-5 col-lg-4">
+      <div class="card mt-5">
+        <div class="card-header">
+          <h5 class="card-title text-center mt-2">Iniciar sesión</h5>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="onLogin()">
+            <label for="email" class="form-label">Correo electrónico</label>
+            <input
+              name="email"
+              id="email"
+              class="form-control mb-2"
+              placeholder="ejemplo@hotmail.com"
+              [(ngModel)]="empleado.email"
+            />
+            <label for="password" class="form-label">Contraseña</label>
+            <input
+              name="password"
+              id="password"
+              type="password"
+              class="form-control"
+              placeholder="micontraseña123*"
+              [(ngModel)]="empleado.password"
+            />
+            <div class="d-flex justify-content-center">
+              <button class="btn btn-primary btn-lg w-75 mt-4" type="submit">
+                Ingresar
+              </button>
+            </div>
+            <div class="text-center">
+              <button type="button" class="btn btn-link mt-2">
+                Olvidé mi contraseña
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

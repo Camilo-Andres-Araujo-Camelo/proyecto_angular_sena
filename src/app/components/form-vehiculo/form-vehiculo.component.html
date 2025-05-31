@@ -1,0 +1,158 @@
+<div class="container pt-4">
+  <div class="card">
+    <h5 class="card-header">Registrar vehículo</h5>
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit(vehiculoForm)" #vehiculoForm="ngForm">
+        <div>
+          <div class="row">
+            <div class="col-2">
+              <label for="tipoVehiculo" class="form-label">Tipo vehículo</label>
+              <select
+                class="form-select"
+                id="tipoVehiculo"
+                aria-label="Tipo de Vehiculo"
+                name="tipoVehiculo"
+                [(ngModel)]="vehiculo.tipo"
+              >
+                <option value="Bus" selected>Bus</option>
+                <option value="Microbus">Microbus</option>
+                <option value="Camioneta">Camioneta</option>
+                <option value="Automóvil">Automóvil</option>
+              </select>
+            </div>
+            <div class="col-2">
+              <label for="placa" class="form-label">Placa</label>
+              <input
+                class="form-control"
+                name="placa"
+                id="placa"
+                [(ngModel)]="vehiculo.placa"
+                required
+                #placa="ngModel"
+              />
+              @if(placa.invalid && (placa.dirty ||
+              placa.touched)){@if(placa.errors!['required']){
+              <div class="text-danger">Campo requerido</div>
+              }}
+            </div>
+            <div class="col-2">
+              <label for="modelo" class="form-label">Modelo</label>
+              <input
+                class="form-control"
+                type="number"
+                name="modelo"
+                id="modelo"
+                [(ngModel)]="vehiculo.modelo"
+                required
+                #modelo="ngModel"
+              />
+              @if (modelo.invalid && (modelo.dirty || modelo.touched)) { @if
+              (modelo.errors!["required"]) {
+              <div class="text-danger">Campo requerido</div>
+              } }
+            </div>
+            <div class="col-3">
+              <label for="marca" class="form-label">Marca</label>
+              <input
+                class="form-control"
+                name="marca"
+                id="marca"
+                [(ngModel)]="vehiculo.marca"
+                required
+                #marca="ngModel"
+              />
+              @if(marca.invalid && (marca.dirty || marca.touched)){
+              @if(marca.errors!["required"]){
+              <div class="text-danger">Campo requerido</div>
+              } }
+            </div>
+            <div class="col-3">
+              <label for="linea" class="form-label">Línea</label>
+              <input
+                class="form-control"
+                name="linea"
+                id="linea"
+                [(ngModel)]="vehiculo.linea"
+                required
+                #linea="ngModel"
+              />
+              @if(linea.invalid && (linea.dirty || linea.touched)){
+              @if(linea.errors!["required"]){
+              <div class="text-danger">Campo requerido</div>
+              } }
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-2">
+              <label for="color" class="form-label">Color</label>
+              <select
+                class="form-select"
+                id="color"
+                aria-label="Color del Vehiculo"
+                name="color"
+                [(ngModel)]="vehiculo.color"
+                #color="ngModel"
+              >
+                <option value="Blanco" selected>Blanco</option>
+                <option value="Gris">Gris</option>
+                <option value="Azul">Azul</option>
+              </select>
+              @if(color.invalid && (color.dirty || color.touched)){
+              @if(color.errors!['required']){
+              <div class="text-danger">Campo requerido</div>
+              } }
+            </div>
+            <div class="col-2">
+              <label for="Capacidad" class="form-label">Capacidad</label>
+              <input
+                class="form-control"
+                name="capacidad"
+                type="number"
+                id="capacidad"
+                [(ngModel)]="vehiculo.capacidad"
+                required
+                #capacidad="ngModel"
+              />
+              @if(capacidad.invalid && (capacidad.dirty || capacidad.touched)){
+              @if(capacidad.errors!['required']){
+              <div class="text-danger">Campo requerido</div>
+              } }
+            </div>
+            <div class="col-4">
+              <label for="conductor" class="form-label">Conductor</label>
+              <select
+                class="form-select"
+                id="conductor"
+                aria-label="Conductor del Vehiculo"
+                name="color"
+              >
+                @for (conductor of conductores; track conductor.id) {
+                <option [value]="conductor.id">
+                  {{ conductor.nombres }}
+                  {{ conductor.apellidos }}
+                </option>
+                }
+              </select>
+            </div>
+            <div class="col-3 d-flex align-items-end">
+              <button
+                type="submit"
+                class="btn btn-primary"
+                [disabled]="vehiculoForm.invalid"
+              >
+                Guardar
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary ms-3"
+                (click)="goBack()"
+              >
+                Atrás
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

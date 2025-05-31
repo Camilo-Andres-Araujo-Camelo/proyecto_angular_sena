@@ -1,0 +1,19 @@
+.container {
+  position: relative;
+}
+
+div i {
+  height: 4rem;
+  font-size: 3rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Asegura que todas las tarjetas tengan la misma altura */
+}
+
+.card-img-top {
+  height: 200px; /* Define una altura fija para todas las imágenes */
+  object-fit: cover; /* Asegura que la imagen se recorte y se mantenga proporcionada */
+}

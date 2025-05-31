@@ -1,0 +1,32 @@
+h4 {
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  font-size: 4rem;
+}
+
+span {
+  font-size: 2rem;
+}
+
+.leyenda {
+  position: relative;
+}
+
+/** Responsivo */
+@media screen and (max-width: 1200px) {
+  h4 {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  h4 {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .leyenda {
+    display: none;
+  }
+}

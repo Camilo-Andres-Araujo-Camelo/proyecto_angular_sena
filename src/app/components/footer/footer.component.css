@@ -1,0 +1,32 @@
+footer {
+  min-height: 300px;
+}
+
+h4 {
+  font-size: 2rem;
+}
+
+li {
+  list-style: none;
+  padding: 0;
+}
+
+span {
+  font-size: 20px;
+}
+
+i {
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .col {
+    text-align: center;
+  }
+  ul {
+    justify-content: center;
+  }
+  .ul-icons li {
+    margin-right: 0;
+  }
+}
