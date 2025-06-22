@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class ClienteService {
-  private apiUrl = 'http://localhost:3000/api/clientes';
+  private apiUrl = 'https://api-proyecto-sena-opcr.onrender.com/api/clientes';
 
   constructor(private http: HttpClient) {}
 

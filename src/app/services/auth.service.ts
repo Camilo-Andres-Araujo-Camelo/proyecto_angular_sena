@@ -7,7 +7,7 @@ import { ClienteService } from './cliente.service';
   providedIn: 'root',
 })
 export class AuthService {
-  private url = 'http://localhost:3000/api/auth/login'; // URL del servicio de autenticación
+  private url = 'https://api-proyecto-sena-opcr.onrender.com/api/auth/login'; // URL del servicio de autenticación
   private _token: string | undefined;
   private _user: any = {
     isAuth: false,
